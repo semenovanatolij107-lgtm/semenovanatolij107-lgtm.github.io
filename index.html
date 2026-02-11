@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KeytoKey | Google Play Developer</title>
+  <meta name="description" content="KeytoKey is a Google Play developer profile focused on publishing, maintaining, and growing mobile applications." />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --bg-soft:#111a2e;
+      --card:#0f172a;
+      --text:#e5e7eb;
+      --muted:#94a3b8;
+      --line:#22314f;
+      --accent:#60a5fa;
+      --accent-2:#34d399;
+      --max:1140px;
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(1000px 500px at 80% -10%, rgba(96,165,250,.16), transparent 60%),
+        radial-gradient(700px 400px at -10% 20%, rgba(52,211,153,.12), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    .wrap{max-width:var(--max);margin:0 auto;padding:24px}
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:12px 0;
+    }
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.2px}
+    .logo{
+      width:38px;height:38px;border-radius:12px;
+      background:linear-gradient(145deg,var(--accent),var(--accent-2));
+      display:grid;place-items:center;color:#061225;font-weight:800;
+      box-shadow:0 10px 24px rgba(52,211,153,.2);
+    }
+    .nav a{color:var(--muted);text-decoration:none;font-size:14px;margin-left:16px}
+    .nav a:hover{color:var(--text)}
+    .hero{
+      margin-top:10px;
+      display:grid;grid-template-columns:1.15fr .85fr;gap:20px;
+      align-items:stretch;
+    }
+    .hero-card,.visual-card,.card{
+      background:linear-gradient(180deg, rgba(17,26,46,.95), rgba(15,23,42,.95));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+    }
+    .hero-card{padding:34px}
+    .eyebrow{
+      display:inline-block;
+      padding:6px 12px;
+      border:1px solid #2c3f63;
+      border-radius:999px;
+      font-size:12px;
+      color:#b6c4da;
+      letter-spacing:.25px;
+      margin-bottom:16px;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:clamp(30px,4vw,48px);
+      line-height:1.15;
+      letter-spacing:.2px;
+    }
+    .lead{margin:0;color:#c9d5e6;max-width:60ch}
+    .hero-actions{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-block;padding:10px 14px;border-radius:10px;
+      text-decoration:none;font-weight:600;font-size:14px;
+      border:1px solid transparent;
+    }
+    .btn.primary{background:linear-gradient(145deg,#3b82f6,#22c55e);color:#061225}
+    .btn.ghost{border-color:#2b3a57;color:#d4e1f6;background:transparent}
+    .visual-card{
+      overflow:hidden;position:relative;min-height:330px;
+      display:grid;grid-template-rows:1fr auto;
+    }
+    .visual{
+      position:relative;min-height:260px;
+      background:
+        linear-gradient(160deg, rgba(96,165,250,.35), rgba(52,211,153,.25)),
+        url('growth.png') center/cover no-repeat;
+    }
+    .visual::after{
+      content:"";
+      position:absolute;inset:0;
+      background:linear-gradient(to top, rgba(11,18,32,.8), rgba(11,18,32,.1));
+    }
+    .visual-meta{
+      padding:16px 18px;color:#dbeafe;
+      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      font-size:13px;border-top:1px solid var(--line);
+    }
+
+    .section{margin-top:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{padding:20px}
+    .card h3{margin:0 0 10px;font-size:18px}
+    .card p{margin:0;color:#c7d2e4;font-size:15px}
+    .mini{
+      margin-top:12px;padding-top:12px;border-top:1px solid #22314f;
+      color:#9eb0c8;font-size:13px
+    }
+
+    .about{
+      margin-top:22px;
+      display:grid;grid-template-columns:1fr 1fr;gap:16px;
+    }
+    .about .card{min-height:220px}
+    ul{margin:0;padding-left:18px;color:#c7d2e4}
+    li{margin:8px 0}
+    .contacts a{color:#93c5fd;text-decoration:none}
+    .contacts a:hover{text-decoration:underline}
+    .foot{
+      margin-top:24px;padding:16px 2px 8px;
+      border-top:1px solid #22314f;
+      color:#8fa3be;font-size:13px;
+      display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
+    }
+    @media (max-width:960px){
+      .hero{grid-template-columns:1fr}
+      .section{grid-template-columns:1fr 1fr}
+      .about{grid-template-columns:1fr}
+    }
+    @media (max-width:640px){
+      .section{grid-template-columns:1fr}
+      .wrap{padding:16px}
+      .hero-card{padding:22px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="nav">
+      <div class="brand">
+        <div class="logo">K</div>
+        <span>KeytoKey</span>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#profile">Profile</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <article class="hero-card">
+        <span class="eyebrow">Google Play Developer Profile</span>
+        <h1>Mobile App Publishing & Growth</h1>
+        <p class="lead">
+          KeytoKey focuses on publishing, maintaining, and scaling Android applications on Google Play.
+          The profile combines product operations, regular updates, and user acquisition support to keep apps growing steadily.
+        </p>
+        
+      </article>
+
+      <aside class="visual-card">
+        <div class="visual"></div>
+        
+      </aside>
+    </section>
+
+    <section id="services" class="section">
+      <article class="card">
+        <h3>App Publishing</h3>
+        <p>
+          Release management, store readiness, and structured updates for mobile applications with emphasis on stability and compliance.
+        </p>
+        <div class="mini">From initial upload to ongoing version support.</div>
+      </article>
+
+      <article class="card">
+        <h3>Product Maintenance</h3>
+        <p>
+          Continuous improvements across UX, performance, and technical reliability to maintain quality standards on production apps.
+        </p>
+        <div class="mini">Regular iteration based on product needs.</div>
+      </article>
+
+      <article class="card">
+        <h3>Growth Support</h3>
+        <p>
+          Traffic acquisition activities are supported through Google Ads UAC campaigns for apps published under this profile.
+        </p>
+        <div class="mini">Performance-oriented promotion workflow.</div>
+      </article>
+    </section>
+
+    <section id="profile" class="about">
+      <article class="card">
+        <h3>Profile Overview</h3>
+        <ul>
+          <li><strong>Developer Name:</strong> KeytoKey</li>
+          <li><strong>Primary Activity:</strong> Android app publishing and operational support</li>
+          <li><strong>Scope:</strong> Product updates, release continuity, and growth-aligned execution</li>
+          <li><strong>Acquisition Channel:</strong> Google Ads (UAC)</li>
+        </ul>
+      </article>
+
+      <article id="contact" class="card contacts">
+        <h3>Contact Details</h3>
+        <p><strong>Owner:</strong> Anatolii Semenov</p>
+        <p>Email: <a href="mailto:semenovanatolij107@gmail.com">semenovanatolij107@gmail.com</a></p>
+        <br />
+        <p><strong>Marketing:</strong> Denis Soonik</p>
+        <p>Email: <a href="mailto:adfgg66778@inbox.eu">adfgg66778@inbox.eu</a></p>
+      </article>
+    </section>
+
+    <footer class="foot">
+      <span>© 2026 KeytoKey. All rights reserved.</span>
+      <span>Developer business card website</span>
+    </footer>
+  </div>
+</body>
+</html>
